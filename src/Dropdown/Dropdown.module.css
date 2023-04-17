@@ -1,0 +1,21 @@
+.drop_container_main {
+  display: inline-block;
+}
+
+.drop_container_main .itemContainer {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.drop_container_main .dropdown {
+  border: 1px solid #ccc;
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drop_container_main .dropdown:hover {
+  cursor: pointer;
+}

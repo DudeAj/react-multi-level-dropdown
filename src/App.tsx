@@ -1,26 +1,87 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Drowdown from './Dropdown/Drowdown';
+const App = () => {
+  const [select, setSelect] = useState('Select...');
+  const [items, setItems] = useState([
+    {
+      label: 'Parent 1',
+    },
+    {
+      label: 'Parent 2',
+      items: [
+        {
+          label: '1 Child of 1',
+          items: [
+            {
+              label: '1 Child of 1',
+            },
+            {
+              label: '2 Child of 1',
+            },
+            {
+              label: '3 Child of 1',
+            },
+          ],
+        },
+        {
+          label: '2 Child of 1',
+        },
+        {
+          label: '3 Child of 1',
+          items: [
+            {
+              label: '1 Child of 1',
+            },
+            {
+              label: '2 Child of 1',
+            },
+            {
+              label: '3 Child of 1',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      label: 'Parent 3',
+      items: [
+        {
+          label: '1 Child of 1',
+        },
+        {
+          label: '2 Child of 1',
+          items: [
+            {
+              label: '1 Child of 1',
+            },
+            {
+              label: '2 Child of 1',
+            },
+            {
+              label: '3 Child of 1',
+            },
+          ],
+        },
+        {
+          label: '3 Child of 1',
+        },
+      ],
+    },
+    {
+      label: 'Parent 4',
+    },
+  ]);
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Drowdown
+        items={items}
+        value={select}
+        handleChange={(item: any) => setSelect(item.label)}
+        onHover={false}
+      />
     </div>
   );
-}
+};
 
 export default App;
